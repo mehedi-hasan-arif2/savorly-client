@@ -2,8 +2,9 @@
 
 Savorly is a recipe-sharing platform where anyone can browse recipes without an account, and registered users can post, manage, and share the dishes they cook regularly. This is the frontend, built with Next.js (App Router) and TypeScript.
 
-## 🔗 Live Site
-- **Client:** [PUT-YOUR-DEPLOYED-CLIENT-URL-HERE]
+## 🔗 Live Demo
+
+- **Client:** https://savorly244.netlify.app/
 
 ---
 
