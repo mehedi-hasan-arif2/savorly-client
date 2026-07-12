@@ -72,7 +72,7 @@ function ExploreContent() {
         <p className="text-center text-slate-400 py-20">No recipes match your filters yet. Try a different search.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {recipes.map((r) => <RecipeCard key={r._id} recipe={r} />)}
+          {recipes.map((r, index) => <RecipeCard key={r._id} recipe={r} priority={index === 0} />)}
         </div>
       )}
 

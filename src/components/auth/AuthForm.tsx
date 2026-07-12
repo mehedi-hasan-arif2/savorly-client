@@ -28,7 +28,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
     if (!email.trim()) next.email = "Email is required";
     else if (!/^\S+@\S+\.\S+$/.test(email)) next.email = "Enter a valid email";
     if (!password) next.password = "Password is required";
-    else if (password.length < 6) next.password = "Password must be at least 6 characters";
+    else if (mode === "register" && password.length < 6) next.password = "Password must be at least 6 characters";
     setErrors(next);
     return Object.keys(next).length === 0;
   }

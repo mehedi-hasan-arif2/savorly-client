@@ -3,8 +3,6 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "@/context/AuthContext";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -28,9 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${fraunces.variable} ${inter.variable} font-body antialiased bg-white`}>
         <AuthProvider>
           <Toaster position="top-center" toastOptions={{ style: { fontSize: "14px" } }} />
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          {children}
         </AuthProvider>
       </body>
     </html>

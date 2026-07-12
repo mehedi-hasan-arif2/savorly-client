@@ -40,7 +40,14 @@ export default function RecipeDetailsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <div>
           <div className="relative w-full h-80 rounded-2xl overflow-hidden mb-3">
-            <Image src={images[activeImage]} alt={recipe.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+            <Image
+              src={images[activeImage]}
+              alt={recipe.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
           </div>
           {images.length > 1 && (
             <div className="flex gap-2">

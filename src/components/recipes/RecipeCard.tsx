@@ -3,7 +3,12 @@ import Image from "next/image";
 import { Star, Clock } from "lucide-react";
 import { Recipe } from "@/types";
 
-export default function RecipeCard({ recipe }: { recipe: Recipe }) {
+interface RecipeCardProps {
+  recipe: Recipe;
+  priority?: boolean;
+}
+
+export default function RecipeCard({ recipe, priority = false }: RecipeCardProps) {
   const image = recipe.images?.[0] || "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600";
 
   return (
@@ -12,7 +17,14 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
       className="flex flex-col rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-lg transition-shadow h-full"
     >
       <div className="relative w-full h-44">
-        <Image src={image} alt={recipe.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
+        <Image
+          src={image}
+          alt={recipe.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover"
+          priority={priority}
+        />
         <span className="absolute top-3 left-3 bg-white/90 text-xs font-medium px-2.5 py-1 rounded-full text-basil-700">
           {recipe.category}
         </span>
